@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# Hello Dear Recruiter at the Foundry!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  
 
-## Available Scripts
+This is a Address Book made with TypeScript, React and Electron too. At the bottom, I also included more projects of what I am working on :)
 
-In the project directory, you can run:
 
+ ## Run and build
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ This will start the app in your browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  ### `npm test`
 
-### `npm test`
+  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will test unit test.
+
+  
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run build-electron`
 
-### `npm run eject`
+Build it for desktop using Electron
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ## My projects
+ ### Nuke BlinkScript Ray Marching from scratch
+ In this video, I go into how I built a Ray Marcher in Nuke using Blink Script.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ouj0C2LVH0I?si=P49j3nj9d9dbrpCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ 
+ ### To Render or Not?: A Browser rendering talk 
+ This is a talk I gave at GameDevMontreal about rendering in the Browser.
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/zCcRfizD_0I?si=Op5zayS55_e1vCCZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ 
+ ### Shadertoy: Mathematics and Art for 2D magic
+A series of video on how to create animation using math and Pixel shader.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Abq2jm0d7ZQ?si=2C34EGcOFno3zUmE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+ ### More 
+ My ShaderToy : https://www.shadertoy.com/user/antoinefortin
+ My personnal website: www.antoinehuot.io
+Warm regards,
+Antoine
