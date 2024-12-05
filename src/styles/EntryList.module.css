@@ -1,0 +1,53 @@
+.container {
+    margin-bottom: 10px;
+  }
+  
+  .sortButton {
+    margin-right: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .sortButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .entryList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .entryItem {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .entryDetails {
+    flex: 1;
+  }
+  
+  .entryName {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  .deleteButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c0392b;
+  }
+  

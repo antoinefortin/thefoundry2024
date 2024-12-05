@@ -1,15 +1,15 @@
 import React from 'react';
 import AddEntryForm from './components/AddEntryForm';
 import EntryList from './components/EntryList';
-
-import './styles/App.css';
 import SearchField from './components/SearchField';
+import './styles/App.css';
+
 
 const App: React.FC = () => {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Address Book</h1>
+        <h1>The Foundry Adress Book</h1>
       </header>
       <main className="app-main">
         <section className="form-section">
@@ -18,8 +18,9 @@ const App: React.FC = () => {
         </section>
         <section className="list-section">
           <h2>Contact List</h2>
-          <EntryList />
           <SearchField />
+          <EntryList />
+          
         </section>
       </main>
     </div>

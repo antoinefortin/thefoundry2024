@@ -1,5 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AddressEntry } from '../types/AddressEntry';
 
 class AddressBookService {
@@ -7,42 +6,27 @@ class AddressBookService {
   public entries$ = this.entriesSubject.asObservable();
 
   addEntry(entry: AddressEntry) {
-    const currentEntries = this.entriesSubject.value;
+    const currentEntries = this.entriesSubject.getValue();
     this.entriesSubject.next([...currentEntries, entry]);
   }
 
-  removeEntry(id: string) {
-    const updatedEntries = this.entriesSubject.value.filter(entry => entry.id !== id);
+  deleteEntry(id: string) {
+    const currentEntries = this.entriesSubject.getValue();
+    const updatedEntries = currentEntries.filter((entry) => entry.id !== id);
     this.entriesSubject.next(updatedEntries);
   }
 
-  searchEntries(query: string) {
-    return this.entries$.pipe(
-      map((entries: AddressEntry[]) =>
-        entries.filter(
-          (entry: AddressEntry) =>
-            entry.firstName.toLowerCase().startsWith(query.toLowerCase()) ||
-            entry.lastName.toLowerCase().startsWith(query.toLowerCase())
+  searchEntries(query: string): Observable<AddressEntry[]> {
+    const lowerCaseQuery = query.toLowerCase();
+    return new BehaviorSubject(
+      this.entriesSubject
+        .getValue()
+        .filter(
+          (entry) =>
+            entry.firstName.toLowerCase().includes(lowerCaseQuery) ||
+            entry.lastName.toLowerCase().includes(lowerCaseQuery)
         )
-      )
-    );
-  }
-  
-
-  getEntriesSortedByFirstName() {
-    return this.entries$.pipe(
-      map((entries: AddressEntry[]) =>
-        [...entries].sort((a, b) => a.firstName.localeCompare(b.firstName))
-      )
-    );
-  }
-
-  getEntriesSortedByLastName() {
-    return this.entries$.pipe(
-      map((entries: AddressEntry[]) =>
-        [...entries].sort((a, b) => a.lastName.localeCompare(b.lastName))
-      )
-    );
+    ).asObservable();
   }
 }
 

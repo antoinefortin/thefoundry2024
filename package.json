@@ -2,6 +2,7 @@
   "name": "address-book",
   "version": "0.1.0",
   "private": true,
+  "main": "electron.js", 
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -19,10 +20,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm:start-react\" \"npm:start-electron\"",
+    "start-react": "react-scripts start",
+    "start-electron": "wait-on http://localhost:3000 && electron .",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build-electron": "npm run build && electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +43,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.example.addressbook",
+    "productName": "AddressBook",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "electron.js",
+      "preload.js"
+    ],
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    },
+    "win": {
+      "target": "nsis",
+      "category": "Utility"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "Utility"
+    }
   }
 }
