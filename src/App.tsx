@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AddEntryForm from './components/AddEntryForm';
+import EntryList from './components/EntryList';
 
-function App() {
+import './styles/App.css';
+import SearchField from './components/SearchField';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-container">
+      <header className="app-header">
+        <h1>Address Book</h1>
       </header>
+      <main className="app-main">
+        <section className="form-section">
+          <h2>Add New Contact</h2>
+          <AddEntryForm />
+        </section>
+        <section className="list-section">
+          <h2>Contact List</h2>
+          <EntryList />
+          <SearchField />
+        </section>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
